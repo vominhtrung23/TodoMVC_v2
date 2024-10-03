@@ -1,0 +1,10 @@
+
+  <div *ngIf="itemsTodoschild" [formGroup]="parentForm">
+    <ul>
+      <li *ngFor="let item of itemsTodoschild; let index=index"  class="listItem">
+        <input type="checkbox" class="toggle" [checked]="item.isComplete" (change)="onCheckChange($event.target, index, item)">
+        <label> {{item.taskTitle}}  -  {{item.isComplete}}</label> 
+        <label class="destroy" (click)="removeItem(index,item)">x</label>
+      </li> 
+    </ul>
+  </div>

@@ -1,0 +1,17 @@
+<div style="position: relative;">
+    @if(originalItems.length>0){
+    <label class="toggle-all-label" [ngClass]="{'toggle-all-labelDark': checkToggleAll}"
+      (click)="toggleAll()"></label>
+    }
+    <input id="name" type="text" placeholder="What needs to be done?" class="new-todo" [(ngModel)]="inputValue"
+      (keyup.enter)="onKeyEnter()">
+  </div>
+
+<form [formGroup]="profileForm" style="position: relative;">
+
+    <app-list-item [parentForm]="profileForm" [itemsTodoschild]="itemsTodos" [originalItemschild]="originalItems">
+    </app-list-item>
+     
+  </form> 
+  <app-footer [originalItems]="originalItems" [itemsTodoschild]="itemsTodos"
+  (itemsTodoschildChange)="filterTodos($event)"></app-footer>

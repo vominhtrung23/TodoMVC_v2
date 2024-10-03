@@ -1,0 +1,10 @@
+
+<div class="pagination" >
+    <label>{{originalItems.length}} item left</label>
+    <div style="display: flex;gap:1em">
+    <label (click)="all()">All</label>
+    <label (click)="active()">Active</label>
+    <label (click)="completed()">Complete</label>
+    </div>
+    <label (click)="clearCompleted()" >Clear Completed</label>
+ </div>
